@@ -2,28 +2,20 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const rp = require('request-promise');
-// const proxy = require('http-proxy-middleware');
+const proxy = require('http-proxy-middleware');
 
 const app = express();
 
-const port = process.env.PORT || 8080;
+// process.env.PORT || 
+const port = 8080;
 
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 app.use(cors());
-app.use(express.json());
 
-app.route('/More-homes/bundle.js')
-  .get((req, res) => {
-    rp(`http://127.0.0.1:3005/bundle.js`)
-    // rp(`https://more-homes-bundle.s3-us-west-2.amazonaws.com/bundle.js`)
-      // .then((body) => console.log(body))
-      .then((body) => res.send(body))
-      .catch(() => res.sendStatus(500))
-      .finally(() => console.log('Morehomes should be oprational!'))
-  })
 app.route('/MoreHomes')
   .get((req, res) => {
-    rp(`http://127.0.0.1:3005/?id=`)
+    rp(`http://127.0.0.1:3005/MoreHomes/?id=`)
       .then((body) => res.send(body))
       .catch(() => res.sendStatus(500))
   })
@@ -55,7 +47,7 @@ app.route('/MoreHomes')
 
 // app.get('/MoreHomes', (req, res) => {
 //   const { id } = req.params;
-//   res.redirect(`http://localhost:3005/MoreHomes/${id}`);
+//   res.redirect(`http://localhost:3005/$id=${id}`);
 //   // res.redirect(`http://3.14.81.50/MoreHomes`);
 // })
 
@@ -87,5 +79,5 @@ app.route('/MoreHomes')
 // );
 
 app.listen(port, () => {
-    console.log('Server is listening on port 8080')
+  console.log('Server is listening on port 8080')
 });
