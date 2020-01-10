@@ -3,6 +3,7 @@ const path = require('path');
 const rp = require('request-promise');
 const ip = require('./ip.js');
 const proxy = require('http-proxy-middleware');
+const app = express();
 
 let photos_q = () => {
   app.get('/photos/:id', (req, res) => {
@@ -69,6 +70,10 @@ let morehomes_q = () => {app.route('/MoreHomes')
   })
 };
 
-const allQs = Promise.all([photos_q, listings_q, booking_q, rooms_q, reviews_q, morehomes_q])
+const allQs = Promise.all([photos_q()]) 
+  // listings_q, booking_q, rooms_q, reviews_q, morehomes_q])
+
+//  .then(body => console.log(body))
+//  .catch((err) => console.log( 'Promise all error: ', err))
 
 module.exports = allQs;

@@ -70,9 +70,8 @@ app.route('/MoreHomes')
       .catch(() => res.sendStatus(500))
   });
 
-app.route(`getAllQs`, allQs)
-  .then(body => console.log(body))
-  // .then(res => res.send())
+// ALL PAGE QUERIES
+app.route(`getallqs`, allQs)
 
   app.listen(port, () => {
     console.log('Server is listening on port 8080')
