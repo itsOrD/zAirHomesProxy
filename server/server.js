@@ -5,6 +5,7 @@ const path = require('path');
 const rp = require('request-promise');
 const ip = require('./ip.js');
 const proxy = require('http-proxy-middleware');
+const allQs = require('./queryAll.js');
 
 const app = express();
 
@@ -69,10 +70,13 @@ app.route('/MoreHomes')
       .catch(() => res.sendStatus(500))
   });
 
+app.route(`getAllQs`, allQs)
+  .then(body => console.log(body))
+  // .then(res => res.send())
+
   app.listen(port, () => {
     console.log('Server is listening on port 8080')
   });
-
 
 // --- PREVIOUS BUILD BELOW THIS LINE ---
 

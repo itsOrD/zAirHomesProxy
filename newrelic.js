@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['moreHomes'],
+  app_name: ['zAirBnBproxy'],
   /**
    * Your New Relic license key.
    */
