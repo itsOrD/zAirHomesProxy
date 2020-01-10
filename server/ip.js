@@ -1,9 +1,9 @@
-const photos = '54.201.94.44';
-const booking = '54.218.70.41';
-const rooms = '54.218.70.41';
-const info = '34.219.65.114';
-const reviews = '34.217.147.152';
-const morehomes = '35.164.175.129';
+const photos = '54.200.99.206';      // Patrick
+const info = '35.166.168.110';       // Kyle
+const booking = '52.34.93.128';      // Inna
+const rooms = '52.34.93.128';        // Inna
+const reviews = '34.217.147.152';    // Sayer
+const morehomes = '54.244.203.223';  // Matt
 
 module.exports = {
   photos,

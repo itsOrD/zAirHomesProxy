@@ -15,6 +15,16 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 app.use(cors());
 
+app.get('/photos/:id', (req, res) => {
+  const { id } = req.params;
+  res.redirect(`http://${ip.photos}/photos/${id}`);
+});
+
+app.get('/listings/:id', (req, res) => {
+  const { id } = req.params;
+  res.redirect(`http://${ip.info}/listings/${id}`);
+});
+
 app.use('/booking',
   proxy({
     target: `http://${ip.booking}/booking`,
@@ -30,6 +40,7 @@ app.use('/booking',
     }
   })
 );
+
 app.use('/room',
   proxy({
     target: `http://${ip.rooms}/room`,
@@ -46,22 +57,24 @@ app.use('/room',
   })
 );
 
+app.get('/reviews/:id/', (req, res) => {
+  const { id } = req.params;
+  res.redirect(`http://${ip.reviews}/reviews/${id}`);
+});
+
 app.route('/MoreHomes')
   .get((req, res) => {
-    rp(`http://127.0.0.1:3005/MoreHomes/?id=`)
+    rp(`http://${ip.morehomes}/MoreHomes/?id=`)
       .then((body) => res.send(body))
       .catch(() => res.sendStatus(500))
-  })
+  });
 
-app.get('/photos/:id', (req, res) => {
-  const { id } = req.params;
-  res.redirect(`http://18.218.52.58:3001/photos/${id}`);
-})
+  app.listen(port, () => {
+    console.log('Server is listening on port 8080')
+  });
 
-// app.get('/listings/:id', (req, res) => {
-//   const { id } = req.params;
-//   res.redirect(`http://54.153.105.148:3002/listings/${id}`);
-// })
+
+// --- PREVIOUS BUILD BELOW THIS LINE ---
 
 // app.get('/booking', (req, res) => {
 //   const { id } = req.params;
@@ -72,11 +85,6 @@ app.get('/photos/:id', (req, res) => {
 //   const { id } = req.params;
 //   res.redirect(`http://${ip.rooms}:3333/room/?id=25`);
 // })
-
-app.get('/reviews/:id/', (req, res) => {
-  const { id } = req.params;
-  res.redirect(`http://${ip.reviews}:3004/reviews/${id}`);
-})
 
 // app.get('/MoreHomes', (req, res) => {
 //   const { id } = req.params;
@@ -110,7 +118,3 @@ app.get('/reviews/:id/', (req, res) => {
 //       }
 //     })
 // );
-
-app.listen(port, () => {
-  console.log('Server is listening on port 8080')
-});
