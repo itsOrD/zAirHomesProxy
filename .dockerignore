@@ -12,6 +12,11 @@ README.md
 LICENSE
 .vscode
 
+server/config.json
+fakeHomeID.js
+
+package-lock.json
+
 Airbnb-booking
 Airbnb-info
 Airbnb-more-homes
