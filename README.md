@@ -5,7 +5,9 @@ zAirHomes is an opens source full-stack web application for renting homes and sh
 
 # "Start Here"
 Book a place to stay based on location, reviews, photos and similar suggestions?
+
 [![zAirHomes Tour](https://img.youtube.com/vi/-j8bSskK35Q/0.jpg)](https://youtu.be/-j8bSskK35Q)
+*click the screenshot for a full YouTube tour*
 
 # Use the App
 The live instances of the micro-services that make up this app are not currently available.  Links to their repos, screenshots, and gifs of the full product will be added to this README.
