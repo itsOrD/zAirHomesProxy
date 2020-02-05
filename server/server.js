@@ -71,7 +71,8 @@ app.route('/MoreHomes')
   });
 
 // ALL PAGE QUERIES
-app.route(`getallqs`, allQs)
+app.route(`/getallqs/:id`) 
+  .get(allQs)
 
   app.listen(port, () => {
     console.log('Server is listening on port 8080')
