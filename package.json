@@ -1,5 +1,5 @@
 {
-  "name": "Airbnb-more-homes-proxy",
+  "name": "zAirHomesProxy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1021sdc/matthew-proxy"
+    "url": "git+https://github.com/1021sdc/zAirHomesProxy"
   },
   "keywords": [],
   "author": "itsOrD",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/1021sdc/matthew-proxy"
+    "url": "https://github.com/1021sdc/zAirHomesProxy"
   },
-  "homepage": "https://github.com/1021sdc/matthew-proxy",
+  "homepage": "https://github.com/1021sdc/zAirHomesProxy",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
