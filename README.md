@@ -1,15 +1,14 @@
 # zAirHomes' Proxy
 zAirHomes is an opens source full-stack web application for renting homes and shared spaces.
 
-#### Technical Brief
-*This repo is the building block for the Docker containers that were hosted on AWS EC2 t2 micros and scaled to over 1400 RPS using custom load balancing and nGinx (more details about this at the bottom of the repo).*
+**Technical Brief**: *This repo is the building block for the Docker containers that were hosted on AWS EC2 t2 micros and scaled to over 1400 RPS using custom load balancing and nGinx (more details about this at the bottom of the repo).*
 
 # "Start Here"
 Book a place to stay based on location, reviews, photos and similar suggestions?
-![].(https://drive.google.com/open?id=1A24uUK1vbsW8rwxCYbmRf0CceSZZl07H)
+[![zAirHomes Tour](https://img.youtube.com/vi/-j8bSskK35Q/0.jpg)](https://youtu.be/-j8bSskK35Q)
 
 # Use the App
-The live instances of the micro-services that make up this app are not currently available.  Links to their repos, screenshots, and higher res videos of the full product will be added to this README asap.
+The live instances of the micro-services that make up this app are not currently available.  Links to their repos, screenshots, and gifs of the full product will be added to this README.
 
  - - - 
 
@@ -21,8 +20,8 @@ The live instances of the micro-services that make up this app are not currently
 
 ## Built With
  * ReactJS (ES6+ && hooks)
- * Grommet
- * Mongo/Mongoose
+ * styled-components
+ * PostGresQL
  * Express.js
  * Node.js
  * Webpack/Babel
